@@ -13,9 +13,13 @@ It also provides a public REST API you can find here: https://rocketpicker.herok
 **Brief Warning: this code hasnt been "cleaned"**
 
 `__init__.py` hosts the webpage, API, and everything else via Flask (at deployment, it uses Gunicorn as well)- it also connects to the backend
+
 `backend.py` runs the "db" and further distrobutes stuff to the following files:
+
 `rocket.py` holds the `Rocket` class which acts as a data struct for literally everything
+
 `crawler.py` is a simple code that searches rocket websites for kits, then tries to add them to the db. So far it only does Apogee and Rocketarium because it was easy :p
+
 `simulate.py` is a basic, crappy simulation thingy. It also acts as a shell for thrustcurve.org 
 
 ## Roadmap
