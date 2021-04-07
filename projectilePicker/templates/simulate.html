@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+</head>
+<body>
+<center>
+<h1>Simulate a Kit</h1>
+    <h4>Disclaimer: this tool is simply to give a rough approximation, if anything it is not very accurate</h4>
+<label for="motorSearch">Find a Motor:</label><br>
+<input type="text" id="motorSearch" name="motorSearch" value="C6">
+<button id="search" onclick="search()">Search</button><br>
+<h3>Results:</h3>
+<select id="motor" name="motor" size="5" multiple style="width: auto; height: auto;">
+</select>
+
+<h3>Model</h3>
+<input type="text" id="name" name="name" value="PLACEHOLDER" disabled>
+<div id="toggle" style="display: none;">
+<h3>Flying on a:</h3>
+<h4 id="motorInfo">
+</h4>
+<h4 id="warning"></h4>
+    <button onclick="run()">Run Simulation</button>
+    <div>
+        <img src="" id="loading" width="150" height="auto">
+        <h4 id="results"></h4>
+    </div>
+</div>
+
+<script src="{{url_for('static', filename='simulate.js')}}"></script>
+</center>
+</body>
+</html>

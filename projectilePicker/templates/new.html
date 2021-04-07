@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body class="blob">
+
+<center>
+<h2>Create New Rocket Entry</h2>
+
+<form method="post" action="/api/create">
+  <label for="name">Rocket Name:</label><br>
+  <input type="text" id="name" name="name" value="ultimate zoomer" required><br><br>
+  <label for="manu">Manufacturer:</label><br>
+  <input type="text" id="manu" name="manu" value="" required><br><br>
+  <label for="diam">Diameter (mm)</label><br>
+  <input type="number" id="diam" name="diam" required><br><br>
+
+  <label for="level">Power Level:</label><br>
+  <select id="level" name="level" size="3" multiple required>
+  	<option value="LPR">Low Power</option>
+  	<option value="MPR">Mid Power</option>
+    <option value="HPR">High Power</option>
+  </select><br><br>
+
+  <label for="motor">Motor Diameter (mm)</label><br>
+  <input type="number" id="motor" name="motor" required><br><br>
+
+  <label for="img">Image URL:</label>
+  <input type="url" id="img" name="img"><br><br>
+  <div id="preview"></div>
+  <label for="url">Product URL:</label>
+  <input type="url" id="url" name="url" ><br><br>
+
+   <label for="price">Price (USD)</label><br>
+   <input type="number" id="price" name="price" required><br><br>
+
+   <label for="mass">Mass (grams)</label><br>
+   <input type="number" id="mass" name="mass"><br><br>
+
+   <label for="material">Material:</label><br>
+  <select id="material" name="material" size="3" multiple disabled>
+
+  </select><br><br>
+  <option value="N/A">N/A</option>
+  <input type="submit" value="Submit">
+</form>
+</center>
+
+<script>
+const input = document.getElementById('img');
+const preview = document.getElementById('preview');
+input.addEventListener('change', updateValue);
+
+function updateValue(e) {
+  console.log("e");
+  var val = input.value;
+  preview.innerHTML = "";
+  var img = document.createElement("img");
+  img.src = val;
+  img.width = 300;
+  img.style.height = "auto";
+  preview.appendChild(img);
+
+}
+</script>
+
+</body>
+</html>

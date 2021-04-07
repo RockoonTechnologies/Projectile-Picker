@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API docs</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        code {
+          background-color:#1a1a1a;
+          font-family: Arial, Helvetica, sans-serif;
+          color: white;
+          font-size: 105%;
+          padding: 2px;
+        }
+    </style>
+</head>
+<body>
+<h1>ProjectilePicker API Docs</h1>
+    <h3>For that one person who wants to make requests</h3>
+   <p>ProjectilePicker boasts a public api, so no key is needed, <br> so you can request as much as you want (though I would prefer if you do so withen reason)</p>
+    <hr>
+    <h2>GET the Database</h2>
+    <p>Its pretty simple, if you want everything in the DB, or some entries, do: </p>
+    <code>GET- /api/main</code>
+    <p>Optional Parameters:<br><br>
+      -<code>amount (int)</code> - caps the amount of entries to return
+     </p>
+    <p><b>Returns:</b></p>
+    <p><code>main</code> returns a array full of entries, a example looks like so:<br>
+     <samp>{"data: <br>[{"name":"Apprentice","img":"https://www.apogeerockets.com/images/apogee_products/apprentice.jpg",<br>"manufacturer":"Apogee","diameter":25.4,"level":"LPR","motor":18.0,<br>"url":"https://www.apogeerockets.com/Rocket-Kits/Skill-Level-1-Model-Rocket/Kits/Apprentice","price":11.3,<br>"material":"","mass":28.35}, ...</samp>
+      <hr>
+  <h2>Search the Database</h2>
+  <code>GET- /api/search?name={name}</code>
+  <p>Search the Database for a Rocket Kit by name (eventually you can search by other parameters)</p>
+  <p><b>Returns:</b></p>
+    <p>Returns a entry, or none if it fails to find the query:<br>
+     <samp>{"name":"Apprentice","img":"https://www.apogeerockets.com/images/apogee_products/apprentice.jpg",<br>"manufacturer":"Apogee","diameter":25.4,"level":"LPR","motor":18.0,<br>"url":"https://www.apogeerockets.com/Rocket-Kits/Skill-Level-1-Model-Rocket/Kits/Apprentice","price":11.3,<br>"material":"","mass":28.35}</samp>
+
+      <hr>
+  <h2>Search for Motors</h2>
+  <code>GET- /api/searchMotor?query={name of the motor}</code>
+  <p>Search ThrustCurve for a motor of supplied name (all this is, is a wrapper for ThrustCurve)</p>
+  <p><b>Returns:</b></p>
+    <p>Returns the following array:<br>
+     <samp>[{"motorId":"5f4294d20002310000000016","manufacturer":"Quest Aerospace","manufacturerAbbrev":"Quest","designation":"C6","commonName":"C6","impulseClass":"C","diameter":18,"length":70,"type":"SU","certOrg":"National Association of Rocketry","avgThrustN":3.45,"maxThrustN":15.46,"totImpulseNs":8.76,"burnTimeS":2.54,"dataFiles":2,"infoUrl":"http://www.nar.org/SandT/pdf/Quest/C6_cn.pdf","totalWeightG":21,"propWeightG":12,"delays":"0,3,5","propInfo":"black powder","sparky":false,"updatedOn":"2019-04-17"}, ...</samp>
+
+
+
+</body>
+</html>

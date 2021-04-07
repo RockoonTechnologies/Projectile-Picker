@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <script src="//unpkg.com/string-similarity/umd/string-similarity.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVPRH435WJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NVPRH435WJ');
+    </script>
+
+</head>
+<body>
+<h1>Rocket Kit Picker</h1>
+<h3><a href="/new"><i class="fas fa-pen-square"></i> Create a new Entry!</a></h3>
+<h4><a href="/api"><i class="fas fa-pen-square"></i> API Docs</a></h4>
+<hr>
+<label for="manu">Manuf.</label>
+<select name="manu" id="manu">
+</select>
+
+<label for="diam">Tube Diameter:</label>
+<select name="diam" id="diam">
+</select>
+
+<label for="motor">Motor Diameter (mm):</label>
+<select name="motor" id="motor">
+</select>
+
+<label for="level">Level:</label>
+<select name="level" id="level">
+</select>
+
+<label for="material">Material:</label>
+<select name="material" id="material">
+</select><br><br>
+
+<label for="tdH">Tube Diameter <i class="fas fa-arrow-up"></i></label>
+<input type="number" id="tdH" name="tdH">
+<label for="tdL">Tube Diameter <i class="fas fa-arrow-down"></i></label>
+<input type="number" id="tdL" name="tdL">
+
+
+<label for="mdH">Motor Diameter <i class="fas fa-arrow-up"></i></label>
+<input type="number" id="mdH" name="mdH">
+<label for="mdL">Motor Diameter <i class="fas fa-arrow-down"></i></label>
+<input type="number" id="mdL" name="mdL"><br>
+
+<label for="search">Search by Name <i class="fas fa-search"></i>:</label>
+<input type="text" id="search" name="search"><br>
+
+<button onclick="update()"><i class="fas fa-sync"></i> Update</button>
+
+
+<h3 id="amount"></h3>
+<h4>Tip: Click the Rocket's name to show advanced information</h4>
+<table id="data" border="1" width="80%">
+</table>
+
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+      <h1 id="modelTitle"></h1>
+      <h2 id="modalPrice"></h2>
+      <img style="float: right;"  id="zoom" src="" width="300" height="auto">
+      <h3 id="details"></h3>
+      <a href="" id="more"><button>More Info and Purchasing <i class="fas fa-sign-out-alt"></i></button></a>
+      <a href="" id="sim"><button>Simulate It <i class="fas fa-rocket"></i></button></a>
+  </div>
+
+</div>
+
+<script src="{{url_for('static', filename='main.js')}}"></script>
+
+</body>
+</html>
